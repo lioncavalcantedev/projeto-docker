@@ -1,0 +1,11 @@
+version: '2.26'
+services:
+  apache:
+    image:  httpd:latest
+    container_name: my-apache-app
+    volumes:
+      - ./src/index.html:/usr/local/apache2/htdocs/index.html
+      - ./src/style.css:/usr/local/apache2/htdocs/style.css
+
+    ports:
+      - "8080:80"
